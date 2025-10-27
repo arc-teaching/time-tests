@@ -1,3 +1,5 @@
+import pytest
+
 from times import compute_overlap_time, time_range
 
 
@@ -40,3 +42,10 @@ def test_ranges_multiple_intervals():
     ]
 
     assert compute_overlap_time(first, second) == expected
+
+def test_time_range_in_order():
+    start_time = "2010-01-12 10:15:00"
+    end_time = "2010-01-12 10:00:00"
+
+    with pytest.raises(ValueError, match="Start time must be before end time"):
+        time_range(start_time, end_time)

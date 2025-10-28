@@ -1,0 +1,6 @@
+{
+	"name": "R Data Science Environment",
+"features": {
+    "ghcr.io/rocker-org/devcontainer-features/miniforge:2": {}
+}
+}
